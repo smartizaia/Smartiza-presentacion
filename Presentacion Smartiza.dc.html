@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:Delight;src:url('brand/fonts/Delight-Light.woff2') format('woff2');font-weight:300}
+@font-face{font-family:Delight;src:url('brand/fonts/Delight-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:Delight;src:url('brand/fonts/Delight-Medium.woff2') format('woff2');font-weight:500}
+@font-face{font-family:Delight;src:url('brand/fonts/Delight-SemiBold.woff2') format('woff2');font-weight:600}
+@font-face{font-family:Delight;src:url('brand/fonts/Delight-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:Delight;src:url('brand/fonts/Delight-ExtraBold.woff2') format('woff2');font-weight:800}
+html,body{margin:0;padding:0;width:100%;height:100vh;background:#f0ebe1;color:#272727;font-family:Delight,sans-serif;overflow:hidden}
+a{color:#00656f}a:hover{color:#00434b}
+*{box-sizing:border-box}
+.a1,.a2,.a3,.a4,.a5,.a6,.a7{opacity:0;animation:ain .4s ease forwards}
+.a1{animation-delay:.03s}.a2{animation-delay:.08s}.a3{animation-delay:.13s}.a4{animation-delay:.18s}.a5{animation-delay:.23s}.a6{animation-delay:.28s}.a7{animation-delay:.33s}
+.slide{position:absolute;inset:0;height:100vh;overflow-y:auto;overflow-x:hidden;display:flex;align-items:center;justify-content:center;padding:90px 76px 120px;z-index:1}
+@media (max-height:900px){.slide{align-items:flex-start;padding-top:100px;padding-bottom:100px}}
+@keyframes ain{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes wad{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+@keyframes rp{0%,100%{opacity:.12;transform:scale(1)}50%{opacity:.28;transform:scale(1.04)}}
+.chatscroll::-webkit-scrollbar{width:3px}
+.chatscroll::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:2px}
+</style>
+</helmet>
+<div style="position:relative;width:100%;height:100vh;overflow:hidden;background:#f0ebe1">
+<img src="brand/textura-mistblue.png" alt="" style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;pointer-events:none;z-index:0"></img>
+<div style="position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#8ecad0,#00656f);z-index:600;transition:width .5s ease;box-shadow:0 0 8px rgba(0,101,111,.35);width:{{ pbw }}"></div>
+<div style="position:fixed;top:18px;left:24px;z-index:600"><img src="brand/logo-deepteal-trim.png" alt="Smartiza" style="height:34px;object-fit:contain"></img></div>
+
+<sc-if value="{{ is0 }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="01 Hero" class="slide">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;width:100%;max-width:1130px">
+<div style="display:flex;flex-direction:column;gap:22px">
+<div class="a1" style="display:flex;gap:9px;flex-wrap:wrap">
+<div style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(0,101,111,.07);border:1px solid rgba(0,101,111,.25);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00656f">⚡ IA Operativa 24/7</div>
+<div style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(142,202,208,.25);border:1px solid rgba(0,101,111,.2);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00565f">🎮 Presentación Interactiva</div>
+</div>
+<h1 class="a2" style="margin:0;font-weight:700;font-size:clamp(40px,5.4vw,72px);line-height:0.92;color:#272727;letter-spacing:-1.5px">Automatización sin errores<br/><em style="color:#00656f;font-style:normal">mientras</em><br/><em style="color:#00656f;font-style:normal">desarrollas tu negocio</em></h1>
+<p class="a3" style="margin:0;font-size:14.5px;font-weight:400;line-height:1.75;color:#54615f;max-width:440px">Asistentes inteligentes que automatizan citas, mensajes, dudas y procesos de atención 24/7, mientras tu negocio sigue creciendo.</p>
+<div class="a4" style="display:flex;gap:7px;flex-wrap:wrap">
+<span style="background:rgba(142,202,208,.28);border:1px solid rgba(0,101,111,.18);border-radius:100px;padding:5px 12px;font-size:11px;color:#00565f;font-weight:500">💬 WhatsApp</span>
+<span style="background:rgba(142,202,208,.28);border:1px solid rgba(0,101,111,.18);border-radius:100px;padding:5px 12px;font-size:11px;color:#00565f;font-weight:500">📸 Instagram</span>
+<span style="background:rgba(142,202,208,.28);border:1px solid rgba(0,101,111,.18);border-radius:100px;padding:5px 12px;font-size:11px;color:#00565f;font-weight:500">📘 Facebook</span>
+<span style="background:rgba(142,202,208,.28);border:1px solid rgba(0,101,111,.18);border-radius:100px;padding:5px 12px;font-size:11px;color:#00565f;font-weight:500">✈️ Telegram</span>
+</div>
+<div class="a5" style="display:flex;gap:26px;margin-top:4px">
+<div><div style="font-size:32px;font-weight:800;line-height:1;color:#00656f;letter-spacing:-.5px">{{ cnt0 }}</div><div style="font-size:10px;color:#54615f;margin-top:3px;letter-spacing:.7px">Disponibilidad</div></div>
+<div><div style="font-size:32px;font-weight:800;line-height:1;color:#00656f;letter-spacing:-.5px">{{ cnt1 }}</div><div style="font-size:10px;color:#54615f;margin-top:3px;letter-spacing:.7px">Mensajes atendidos</div></div>
+<div><div style="font-size:32px;font-weight:800;line-height:1;color:#00656f;letter-spacing:-.5px">{{ cnt2 }}</div><div style="font-size:10px;color:#54615f;margin-top:3px;letter-spacing:.7px">Canales activos</div></div>
+</div>
+<div class="a6" style="display:flex;gap:11px;flex-wrap:wrap">
+<button onClick="{{ goPlanes }}" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#00858f,#00434b);color:#fff;border:none;padding:13px 28px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(0,101,111,.3);font-family:Delight,sans-serif" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,101,111,.42)">Ver Planes →</button>
+<button onClick="{{ goComo }}" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.75);border:1.5px solid rgba(0,101,111,.35);color:#00656f;padding:12px 24px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;font-family:Delight,sans-serif" style-hover="background:rgba(142,202,208,.25);border-color:#00656f">Cómo funciona</button>
+</div>
+</div>
+<div class="a3" style="position:relative;display:flex;align-items:center;justify-content:center;height:420px">
+<svg style="position:absolute;width:360px;height:360px;pointer-events:none" viewBox="0 0 360 360">
+<circle cx="180" cy="180" r="128" fill="none" stroke="rgba(0,101,111,0.16)" stroke-width="1.5" style="animation:rp 4s ease-in-out infinite;transform-origin:180px 180px"></circle>
+<circle cx="180" cy="180" r="154" fill="none" stroke="rgba(0,101,111,0.1)" stroke-width="1" style="animation:rp 4s ease-in-out infinite .9s;transform-origin:180px 180px"></circle>
+<circle cx="180" cy="180" r="174" fill="none" stroke="rgba(0,101,111,0.06)" stroke-width="1" style="animation:rp 4s ease-in-out infinite 1.8s;transform-origin:180px 180px"></circle>
+</svg>
+<div style="position:relative;z-index:2;animation:float 4.5s ease-in-out infinite">
+<svg width="200" height="220" viewBox="0 0 200 220">
+<defs>
+<linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00858f"></stop><stop offset="100%" stop-color="#00434b"></stop></linearGradient>
+<linearGradient id="rb" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ddeef0"></stop><stop offset="100%" stop-color="#bfe0e4"></stop></linearGradient>
+<filter id="ds"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,60,66,0.15)"></feDropShadow></filter>
+</defs>
+<rect x="52" y="88" width="96" height="74" rx="18" fill="url(#rb)" filter="url(#ds)"></rect>
+<rect x="52" y="88" width="96" height="74" rx="18" fill="none" stroke="rgba(0,101,111,0.4)" stroke-width="1.5"></rect>
+<rect x="64" y="100" width="72" height="50" rx="10" fill="rgba(255,255,255,0.5)" stroke="rgba(0,101,111,0.22)" stroke-width="1"></rect>
+<circle cx="80" cy="112" r="3" fill="#00656f"><animate attributeName="opacity" values="1;.2;1" dur="1.6s" repeatCount="indefinite"></animate></circle>
+<circle cx="100" cy="112" r="3" fill="#00656f"><animate attributeName="opacity" values="1;.2;1" dur="1.6s" begin=".55s" repeatCount="indefinite"></animate></circle>
+<circle cx="120" cy="112" r="3" fill="#00656f"><animate attributeName="opacity" values="1;.2;1" dur="1.6s" begin="1.1s" repeatCount="indefinite"></animate></circle>
+<line x1="80" y1="122" x2="120" y2="122" stroke="rgba(0,101,111,.3)" stroke-width="1"></line>
+<line x1="80" y1="130" x2="112" y2="130" stroke="rgba(0,101,111,.2)" stroke-width="1"></line>
+<rect x="58" y="42" width="84" height="58" rx="20" fill="url(#rb)" filter="url(#ds)"></rect>
+<rect x="58" y="42" width="84" height="58" rx="20" fill="none" stroke="rgba(0,101,111,0.4)" stroke-width="1.5"></rect>
+<line x1="100" y1="22" x2="100" y2="42" stroke="#00656f" stroke-width="2.5" stroke-linecap="round"></line>
+<circle cx="100" cy="18" r="6" fill="#00656f"><animate attributeName="opacity" values="1;.3;1" dur="2s" repeatCount="indefinite"></animate></circle>
+<circle cx="100" cy="18" r="10" fill="none" stroke="rgba(0,101,111,.4)" stroke-width="1"><animate attributeName="r" values="6;14;6" dur="2s" repeatCount="indefinite"></animate><animate attributeName="opacity" values=".4;0;.4" dur="2s" repeatCount="indefinite"></animate></circle>
+<rect x="68" y="55" width="26" height="18" rx="7" fill="white" stroke="rgba(0,101,111,0.22)" stroke-width="1"></rect>
+<rect x="106" y="55" width="26" height="18" rx="7" fill="white" stroke="rgba(0,101,111,0.22)" stroke-width="1"></rect>
+<rect x="73" y="58.5" width="16" height="11" rx="5" fill="#00656f"><animate attributeName="opacity" values="1;1;.05;1;1" dur="4s" repeatCount="indefinite"></animate></rect>
+<rect x="111" y="58.5" width="16" height="11" rx="5" fill="#00434b"><animate attributeName="opacity" values="1;1;.05;1;1" dur="4s" begin=".5s" repeatCount="indefinite"></animate></rect>
+<circle cx="81" cy="63" r="3" fill="white" opacity=".6"></circle><circle cx="119" cy="63" r="3" fill="white" opacity=".6"></circle>
+<path d="M76 82 Q100 94 124 82" stroke="#00656f" stroke-width="3" stroke-linecap="round" fill="none"></path>
+<rect x="88" y="80" width="24" height="12" rx="5" fill="url(#rb)" stroke="rgba(0,101,111,.3)" stroke-width="1.5"></rect>
+<rect x="14" y="92" width="34" height="15" rx="7.5" fill="url(#rb)" filter="url(#ds)" stroke="rgba(0,101,111,.35)" stroke-width="1.5"></rect>
+<rect x="152" y="92" width="34" height="15" rx="7.5" fill="url(#rb)" filter="url(#ds)" stroke="rgba(0,101,111,.35)" stroke-width="1.5"></rect>
+<rect x="66" y="160" width="24" height="30" rx="10" fill="url(#rb)" filter="url(#ds)" stroke="rgba(0,101,111,.35)" stroke-width="1.5"></rect>
+<rect x="110" y="160" width="24" height="30" rx="10" fill="url(#rb)" filter="url(#ds)" stroke="rgba(0,101,111,.35)" stroke-width="1.5"></rect>
+<rect x="64" y="158" width="72" height="8" rx="4" fill="url(#rb)" stroke="rgba(0,101,111,.28)" stroke-width="1.5"></rect>
+<rect x="58" y="184" width="32" height="10" rx="5" fill="url(#rb)" stroke="rgba(0,101,111,.28)" stroke-width="1.5"></rect>
+<rect x="110" y="184" width="32" height="10" rx="5" fill="url(#rb)" stroke="rgba(0,101,111,.28)" stroke-width="1.5"></rect>
+</svg>
+</div>
+<div style="position:absolute;top:12%;left:-8%;animation:float 3.5s ease-in-out infinite .3s;background:rgba(255,255,255,.92);border:1px solid rgba(0,101,111,.15);border-radius:14px;padding:12px 15px;backdrop-filter:blur(16px);box-shadow:0 8px 24px rgba(0,60,66,.12);min-width:190px">
+<div style="font-size:12px;font-weight:600;color:#272727;margin-bottom:2px;display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Cita Confirmada</div>
+<div style="font-size:10px;color:#54615f;margin-bottom:6px">Hace 2 min</div>
+<div style="font-size:11px;color:#3d4a48;line-height:1.5">"Tu paciente agendó para mañana a las 10:00 AM."</div>
+</div>
+<div style="position:absolute;bottom:14%;right:-6%;animation:float 3.5s ease-in-out infinite .9s;background:rgba(255,255,255,.92);border:1px solid rgba(0,101,111,.15);border-radius:14px;padding:12px 15px;backdrop-filter:blur(16px);box-shadow:0 8px 24px rgba(0,60,66,.12);min-width:190px">
+<div style="font-size:12px;font-weight:600;color:#272727;margin-bottom:2px">🤖 Respuesta Auto</div>
+<div style="font-size:10px;color:#54615f;margin-bottom:6px">En tiempo real</div>
+<div style="font-size:11px;color:#3d4a48;line-height:1.5">"¡Hola! Aquí tienes info de nuestros paquetes..."</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is1 }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="02 Canales" class="slide">
+<div style="display:flex;align-items:center;gap:46px;width:100%;max-width:1130px">
+<div style="flex:1;display:flex;flex-direction:column;gap:15px">
+<div class="a1" style="width:46px;height:2.5px;background:linear-gradient(90deg,#8ecad0,#00656f);border-radius:2px"></div>
+<div class="a1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(0,101,111,.07);border:1px solid rgba(0,101,111,.25);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00656f">🌐 Omnicanal</div>
+<h2 class="a2" style="margin:0;font-weight:700;font-size:clamp(22px,2.8vw,40px);line-height:0.72;color:#272727;letter-spacing:-.5px">¿Dónde Operan<br></br>Nuestros <em style="color:#00656f;font-style:normal">Agentes?</em></h2>
+<p class="a3" style="margin:0;font-size:14px;line-height:1.75;color:#54615f;max-width:440px">Tus clientes están en múltiples canales. El agente está en todos, respondiendo al instante y de forma consistente.</p>
+<div class="a4" style="background:rgba(255,255,255,.72);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:15px 18px;backdrop-filter:blur(8px)">
+<div style="font-size:13px;font-weight:600;color:#272727;margin-bottom:9px">El agente hace todo por ti:</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="font-size:12px;color:#54615f;display:flex;gap:8px"><span style="color:#00656f;font-weight:700">→</span>Responde FAQs automáticamente</div>
+<div style="font-size:12px;color:#54615f;display:flex;gap:8px"><span style="color:#00656f;font-weight:700">→</span>Califica y registra prospectos en tiempo real</div>
+<div style="font-size:12px;color:#54615f;display:flex;gap:8px"><span style="color:#00656f;font-weight:700">→</span>Agenda citas y envía confirmaciones</div>
+<div style="font-size:12px;color:#54615f;display:flex;gap:8px"><span style="color:#00656f;font-weight:700">→</span>Escala al humano cuando es necesario</div>
+</div>
+</div>
+</div>
+<div style="flex:1.3;display:flex;flex-direction:column;gap:10px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div class="a3" style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.75);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:14px 17px;box-shadow:0 1px 6px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);transform:translateX(4px)"><span style="font-size:26px">💬</span><div><div style="font-size:13px;font-weight:600;color:#272727">WhatsApp</div><div style="font-size:11px;color:#54615f;margin-top:2px">Canal #1 · API Oficial</div></div></div>
+<div class="a4" style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.75);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:14px 17px;box-shadow:0 1px 6px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);transform:translateX(4px)"><span style="font-size:26px">📸</span><div><div style="font-size:13px;font-weight:600;color:#272727">Instagram</div><div style="font-size:11px;color:#54615f;margin-top:2px">DMs automatizados</div></div></div>
+<div class="a5" style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.75);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:14px 17px;box-shadow:0 1px 6px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);transform:translateX(4px)"><span style="font-size:26px">📘</span><div><div style="font-size:13px;font-weight:600;color:#272727">Facebook</div><div style="font-size:11px;color:#54615f;margin-top:2px">Messenger empresarial</div></div></div>
+<div class="a6" style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.75);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:14px 17px;box-shadow:0 1px 6px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);transform:translateX(4px)"><span style="font-size:26px">✈️</span><div><div style="font-size:13px;font-weight:600;color:#272727">Telegram</div><div style="font-size:11px;color:#54615f;margin-top:2px">Bots y canales privados</div></div></div>
+</div>
+<div class="a7" style="background:rgba(142,202,208,.22);border:1px solid rgba(0,101,111,.18);border-radius:11px;padding:13px 17px;text-align:center">
+<span style="font-size:12px;color:#00565f;font-weight:600">⚡ &lt;1 seg de respuesta · 24/7 sin parar · Sin días festivos</span>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is2 }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="03 Planes" class="slide" style="padding-left:60px;padding-right:60px">
+<div style="display:flex;flex-direction:column;gap:22px;width:100%;max-width:1250px">
+<div style="display:flex;flex-direction:column;gap:7px">
+<div class="a1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(0,101,111,.07);border:1px solid rgba(0,101,111,.25);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00656f">💎 Planes</div>
+<h2 class="a2" style="margin:0;font-weight:700;font-size:clamp(22px,2.8vw,40px);line-height:0.72;color:#272727;letter-spacing:-.5px">Nuestros <em style="color:#00656f;font-style:normal">Agentes de IA</em></h2>
+<p class="a3" style="margin:0;font-size:12px;line-height:1.7;color:#54615f;max-width:700px">Personalización incluida · Soporte continuo</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:100%">
+<div class="a3" style="background:rgba(255,255,255,.78);border:1px solid rgba(0,101,111,.15);border-radius:18px;padding:24px;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,60,66,.05)" style-hover="transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,60,66,.13)"><div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#00656f;margin-bottom:6px;font-weight:700">Starter</div><div style="font-size:17px;font-weight:600;color:#272727">Agente IA Básico</div><div style="margin-top:10px;margin-bottom:15px;font-weight:500;font-size:14px;color:#54615f">Atención básica al cliente</div><ul style="list-style:none;margin:0;padding:0"><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>1 Agente personalizado</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Atención 24/7</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Respuestas automáticas</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Consultas generales</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Info para prospectos</li></ul><div style="margin-top:12px;padding:8px 12px;background:rgba(142,202,208,.2);border:1px solid rgba(0,101,111,.14);border-radius:7px;font-size:10px;color:#00565f">💼 Atención básica al cliente</div></div>
+<div class="a4" style="background:rgba(255,255,255,.78);border:1px solid rgba(0,101,111,.15);border-radius:18px;padding:24px;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,60,66,.05)" style-hover="transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,60,66,.13)"><div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#00656f;margin-bottom:6px;font-weight:700">Profesional</div><div style="font-size:17px;font-weight:600;color:#272727">Agente IA Profesional</div><div style="margin-top:10px;margin-bottom:15px;font-weight:500;font-size:14px;color:#54615f">Catálogos &amp; ventas complejas</div><ul style="list-style:none;margin:0;padding:0"><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Interpretación de voz</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Análisis de imágenes</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Memoria inteligente (RAG)</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>PDFs y catálogos</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Respuestas contextuales</li></ul><div style="margin-top:12px;padding:8px 12px;background:rgba(142,202,208,.2);border:1px solid rgba(0,101,111,.14);border-radius:7px;font-size:10px;color:#00565f">📦 Catálogos &amp; ventas complejas</div></div>
+<div class="a5" style="background:linear-gradient(135deg,rgba(142,202,208,.28),rgba(255,255,255,.92));border:1px solid rgba(0,101,111,.35);border-radius:18px;padding:24px;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,60,66,.08);position:relative;overflow:hidden" style-hover="transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,60,66,.13)"><div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#8ecad0,#00656f)"></div><div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#00656f;margin-bottom:6px;font-weight:700">⭐ Más Popular</div><div style="font-size:17px;font-weight:600;color:#272727">Filtrador de Leads</div><div style="margin-top:10px;margin-bottom:15px;font-weight:500;font-size:14px;color:#54615f">Equipos de ventas</div><ul style="list-style:none;margin:0;padding:0"><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Calificación automática</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Filtrado inteligente</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Preguntas estratégicas</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Recopilación de datos</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Registro en CRM (Odoo)</li></ul><div style="margin-top:12px;padding:8px 12px;background:rgba(142,202,208,.2);border:1px solid rgba(0,101,111,.14);border-radius:7px;font-size:10px;color:#00565f">🎯 Equipos de ventas</div></div>
+<div class="a6" style="background:linear-gradient(135deg,rgba(142,202,208,.28),rgba(255,255,255,.92));border:1px solid rgba(0,101,111,.35);border-radius:18px;padding:24px;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,60,66,.08);position:relative;overflow:hidden" style-hover="transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,60,66,.13)"><div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#8ecad0,#00656f)"></div><div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#00656f;margin-bottom:6px;font-weight:700">⭐ Más Popular</div><div style="font-size:17px;font-weight:600;color:#272727">Agente Recepcionista</div><div style="margin-top:10px;margin-bottom:15px;font-weight:500;font-size:14px;color:#54615f">Consultorios &amp; servicios</div><ul style="list-style:none;margin:0;padding:0"><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Agendado automático</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Sync Google Calendar</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Confirmaciones al instante</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.08);display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Recordatorios</li><li style="font-size:11px;color:#3d4a48;padding:5px 0;display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Reprogramaciones</li></ul><div style="margin-top:12px;padding:8px 12px;background:rgba(142,202,208,.2);border:1px solid rgba(0,101,111,.14);border-radius:7px;font-size:10px;color:#00565f">🏥 Consultorios &amp; servicios</div></div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is3 }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="04 Demo Chat" class="slide">
+<div style="display:flex;align-items:center;gap:46px;width:100%;max-width:1130px">
+<div style="flex:1;display:flex;flex-direction:column;gap:15px">
+<div class="a1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(0,101,111,.07);border:1px solid rgba(0,101,111,.25);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00656f">💬 Demo en Vivo</div>
+<h2 class="a2" style="margin:0;font-weight:700;font-size:clamp(22px,2.8vw,40px);line-height:0.72;color:#272727;letter-spacing:-.5px">Así responde<br></br>tu <em style="color:#00656f;font-style:normal">Agente IA</em></h2>
+<p class="a3" style="margin:0;font-size:14px;line-height:1.75;color:#54615f;max-width:440px">Escribe un mensaje y ve cómo el agente responde al instante, con contexto y personalidad de tu negocio.</p>
+<div class="a4" style="display:flex;flex-direction:column;gap:2px">
+<div style="display:flex;align-items:flex-start;gap:13px;padding:11px 0;border-bottom:1px solid rgba(0,101,111,.1)"><div style="font-size:20px;flex-shrink:0;margin-top:1px">🧠</div><div><div style="font-size:13px;font-weight:600;color:#272727;margin-bottom:3px">Con Memoria (RAG)</div><div style="font-size:11.5px;color:#54615f;line-height:1.55">Consulta catálogos, PDFs y precios en tiempo real</div></div></div>
+<div style="display:flex;align-items:flex-start;gap:13px;padding:11px 0;border-bottom:1px solid rgba(0,101,111,.1)"><div style="font-size:20px;flex-shrink:0;margin-top:1px">🎙️</div><div><div style="font-size:13px;font-weight:600;color:#272727;margin-bottom:3px">Voz e Imágenes</div><div style="font-size:11.5px;color:#54615f;line-height:1.55">Procesa audios y fotos del cliente automáticamente</div></div></div>
+<div style="display:flex;align-items:flex-start;gap:13px;padding:11px 0"><div style="font-size:20px;flex-shrink:0;margin-top:1px">🌐</div><div><div style="font-size:13px;font-weight:600;color:#272727;margin-bottom:3px">Multicanal</div><div style="font-size:11.5px;color:#54615f;line-height:1.55">Mismo agente en WhatsApp, Instagram, Facebook, Telegram</div></div></div>
+</div>
+</div>
+<div class="a3" style="flex:1.3;display:flex;flex-direction:column">
+<div style="background:rgba(255,255,255,.85);border:1px solid rgba(0,101,111,.15);border-radius:18px;padding:20px;backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(0,60,66,.08);display:flex;flex-direction:column;gap:10px;height:360px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#54615f;display:flex;align-items:center;gap:6px;padding-bottom:10px;border-bottom:1px solid rgba(0,101,111,.1)"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0"></span>Agente Smartiza · Demo en Vivo</div>
+<div id="chat-body" class="chatscroll" style="flex:1;display:flex;flex-direction:column;gap:7px;overflow-y:auto;padding-right:2px">
+<sc-for list="{{ chatMsgs }}" as="m" hint-placeholder-count="1">
+<div style="{{ m.style }}">{{ m.text }}</div>
+</sc-for>
+<sc-if value="{{ chatTyping }}" hint-placeholder-val="{{ false }}">
+<div style="background:rgba(0,101,111,.07);align-self:flex-start;border-radius:4px 14px 14px 14px;padding:10px 14px;display:flex;gap:4px;align-items:center;height:16px">
+<span style="width:6px;height:6px;border-radius:50%;background:#00656f;animation:wad .8s ease-in-out infinite"></span>
+<span style="width:6px;height:6px;border-radius:50%;background:#00656f;animation:wad .8s ease-in-out .15s infinite"></span>
+<span style="width:6px;height:6px;border-radius:50%;background:#00656f;animation:wad .8s ease-in-out .3s infinite"></span>
+</div>
+</sc-if>
+</div>
+<div style="display:flex;gap:7px;align-items:center;padding-top:10px;border-top:1px solid rgba(0,101,111,.1)">
+<input type="text" value="{{ chatInput }}" onChange="{{ onChatInput }}" onKeyDown="{{ onChatKey }}" placeholder="Escribe un mensaje..." style="flex:1;background:rgba(0,101,111,.05);border:1px solid rgba(0,101,111,.15);border-radius:100px;padding:8px 14px;font-size:11.5px;color:#272727;outline:none;font-family:Delight,sans-serif"></input>
+<button onClick="{{ sendMsg }}" style="background:linear-gradient(135deg,#00858f,#00434b);color:white;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0" style-hover="transform:scale(1.1)">►</button>
+</div>
+</div>
+<div style="display:flex;gap:7px;margin-top:9px;flex-wrap:wrap">
+<button onClick="{{ qPrecios }}" style="background:rgba(142,202,208,.22);border:1px solid rgba(0,101,111,.2);border-radius:100px;padding:5px 12px;font-size:11px;color:#00565f;cursor:pointer;font-family:Delight,sans-serif" style-hover="background:rgba(142,202,208,.45)">¿Cuáles son sus precios?</button>
+<button onClick="{{ qCita }}" style="background:rgba(142,202,208,.22);border:1px solid rgba(0,101,111,.2);border-radius:100px;padding:5px 12px;font-size:11px;color:#00565f;cursor:pointer;font-family:Delight,sans-serif" style-hover="background:rgba(142,202,208,.45)">Quiero agendar una cita</button>
+<button onClick="{{ qFunciona }}" style="background:rgba(142,202,208,.22);border:1px solid rgba(0,101,111,.2);border-radius:100px;padding:5px 12px;font-size:11px;color:#00565f;cursor:pointer;font-family:Delight,sans-serif" style-hover="background:rgba(142,202,208,.45)">¿Cómo funciona?</button>
+</div>
+<div style="font-size:10.5px;color:#54615f;display:flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(0,101,111,.05);border:1px dashed rgba(0,101,111,.25);border-radius:8px;margin-top:8px">✉ Escribe cualquier pregunta o usa los botones rápidos</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is4 }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="05 Demo Leads" class="slide">
+<div style="display:flex;align-items:center;gap:46px;width:100%;max-width:1130px">
+<div style="flex:1;display:flex;flex-direction:column;gap:15px">
+<div class="a1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(0,101,111,.07);border:1px solid rgba(0,101,111,.25);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00656f">🎯 Calificación Automática</div>
+<h2 class="a2" style="margin:0;font-weight:700;font-size:clamp(22px,2.8vw,40px);line-height:0.72;color:#272727;letter-spacing:-.5px">Filtrador de<br></br><em style="color:#00656f;font-style:normal">Leads</em></h2>
+<div class="a3" style="font-size:24px;font-weight:700;color:#272727;letter-spacing:-0.5px;margin-top:10px">CRM &amp; Ventas</div>
+<div class="a3" style="font-size:12px;color:#54615f;margin-top:1px">Personalización incluida</div>
+<p class="a4" style="margin:9px 0 0;font-size:14px;line-height:1.75;color:#54615f;max-width:440px">Tu equipo solo habla con prospectos reales. El agente filtra, califica y entrega leads listos para cerrar.</p>
+<div class="a5" style="display:flex;flex-direction:column;gap:5px;margin-top:4px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#54615f;margin-bottom:3px">Lo que hace</div>
+<div style="font-size:12px;color:#54615f;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.09);display:flex;gap:8px"><span style="color:#00656f;font-weight:700">✓</span>Calificación automática en tiempo real</div>
+<div style="font-size:12px;color:#54615f;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.09);display:flex;gap:8px"><span style="color:#00656f;font-weight:700">✓</span>Separa curiosos de compradores reales</div>
+<div style="font-size:12px;color:#54615f;padding:5px 0;border-bottom:1px solid rgba(0,101,111,.09);display:flex;gap:8px"><span style="color:#00656f;font-weight:700">✓</span>Preguntas estratégicas personalizadas</div>
+<div style="font-size:12px;color:#54615f;padding:5px 0;display:flex;gap:8px"><span style="color:#00656f;font-weight:700">✓</span>Registro automático en Odoo CRM</div>
+</div>
+</div>
+<div class="a3" style="flex:1.3;display:flex;flex-direction:column">
+<div style="background:rgba(255,255,255,.85);border:1px solid rgba(0,101,111,.15);border-radius:18px;padding:20px;backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(0,60,66,.08);display:flex;flex-direction:column;gap:10px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#54615f;display:flex;align-items:center;gap:6px;padding-bottom:10px;border-bottom:1px solid rgba(0,101,111,.1)"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0"></span>CRM · Leads Calificados Hoy</div>
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="background:rgba(0,101,111,.04);border:1px solid rgba(0,101,111,.12);border-radius:12px;padding:13px">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+<div><div style="font-size:13px;font-weight:600;color:#272727;margin-bottom:3px">María G. — Psicología</div><div style="font-size:11px;color:#54615f">Guadalajara · Hace 8 min</div></div>
+<span style="display:inline-block;padding:4px 10px;border-radius:100px;font-size:10.5px;font-weight:600;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#dc2626">🔥 Hot Lead</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Intención</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w1 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">92%</span></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Presupuesto</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w2 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">85%</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Urgencia</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w3 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">78%</span></div>
+</div>
+<div style="background:rgba(0,101,111,.04);border:1px solid rgba(0,101,111,.12);border-radius:12px;padding:13px">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+<div><div style="font-size:13px;font-weight:600;color:#272727;margin-bottom:3px">Carlos R. — Inmobiliaria</div><div style="font-size:11px;color:#54615f">CDMX · Hace 22 min</div></div>
+<span style="display:inline-block;padding:4px 10px;border-radius:100px;font-size:10.5px;font-weight:600;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:#d97706">⚡ Warm</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Intención</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w4 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">61%</span></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Presupuesto</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w5 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">70%</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Urgencia</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w6 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">45%</span></div>
+</div>
+<div style="background:rgba(0,101,111,.04);border:1px solid rgba(0,101,111,.12);border-radius:12px;padding:13px">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+<div><div style="font-size:13px;font-weight:600;color:#272727;margin-bottom:3px">Ana L. — Tienda Online</div><div style="font-size:11px;color:#54615f">Monterrey · Hace 1 hr</div></div>
+<span style="display:inline-block;padding:4px 10px;border-radius:100px;font-size:10.5px;font-weight:600;background:rgba(107,114,128,.12);border:1px solid rgba(107,114,128,.25);color:#6b7280">❄️ Cold</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Intención</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w7 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">28%</span></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Presupuesto</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w8 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">35%</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="font-size:10.5px;color:#54615f;width:70px;flex-shrink:0">Urgencia</span><div style="flex:1;background:rgba(0,101,111,.12);border-radius:100px;height:7px;overflow:hidden"><div style="{{ w9 }}"></div></div><span style="font-size:11px;font-weight:700;color:#00656f;width:32px;text-align:right;flex-shrink:0">20%</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is5 }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="06 Demo Agenda" class="slide">
+<div style="display:flex;align-items:center;gap:46px;width:100%;max-width:1130px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<div class="a1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(0,101,111,.07);border:1px solid rgba(0,101,111,.25);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00656f">📅 Agenda Automática</div>
+<h2 class="a2" style="margin:0;font-weight:700;font-size:clamp(22px,2.8vw,40px);line-height:0.72;color:#272727;letter-spacing:-.5px">Agente IA<br></br><em style="color:#00656f;font-style:normal">Recepcionista</em></h2>
+<div class="a3" style="font-size:24px;font-weight:700;color:#272727;letter-spacing:-0.5px;margin-top:10px">Citas &amp; Agenda</div>
+<div class="a3" style="font-size:12px;color:#54615f;margin-top:1px">Personalización incluida</div>
+<p class="a4" style="margin:9px 0 0;font-size:14px;line-height:1.75;color:#54615f;max-width:440px">El agente guía al cliente paso a paso por WhatsApp, <span style="color:#00656f;font-weight:600">sin intervención humana.</span></p>
+<div class="a5" style="background:rgba(255,255,255,.72);border:1px solid rgba(0,101,111,.15);border-radius:12px;padding:12px 15px;margin-top:6px">
+<div style="font-size:11px;color:#00656f;font-weight:600;margin-bottom:4px">🏥 Ideal para:</div>
+<div style="font-size:11px;color:#54615f">Consultorios, clínicas, psicólogos, abogados, spas.</div>
+</div>
+<div class="a6" style="display:flex;flex-direction:column;gap:5px;margin-top:8px">
+<div style="font-size:11.5px;color:#54615f;display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Google Calendar sync</div>
+<div style="font-size:11.5px;color:#54615f;display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Confirmación por WhatsApp</div>
+<div style="font-size:11.5px;color:#54615f;display:flex;gap:7px"><span style="color:#00656f;font-weight:700">✓</span>Recordatorios automáticos</div>
+</div>
+</div>
+<div class="a3" style="flex:1.3;display:flex;flex-direction:column">
+<div style="font-size:10px;color:#92400e;background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.25);border-radius:8px;padding:5px 10px;margin-bottom:8px;display:flex;gap:6px;align-items:center"><span>⚠️</span> Solo ejemplo visual. El agente usa la información real de tu negocio.</div>
+<div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(0,60,66,.13);display:flex;flex-direction:column">
+<div style="background:#075E54;padding:10px 14px;display:flex;align-items:center;gap:9px">
+<div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">🤖</div>
+<div>
+<div style="font-size:13px;font-weight:600;color:white">Agente Recepcionista IA</div>
+<div style="font-size:9.5px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:4px"><span style="width:5px;height:5px;border-radius:50%;background:#25D366;display:inline-block"></span> en línea ahora</div>
+</div>
+</div>
+<div id="s5body" class="chatscroll" style="background:#e5ddd5;padding:10px 12px;display:flex;flex-direction:column;gap:7px;height:250px;overflow-y:auto;overflow-x:hidden">
+<sc-for list="{{ s5msgs }}" as="m" hint-placeholder-count="0">
+<div style="{{ m.style }}">{{ m.text }}<div style="font-size:9px;color:rgba(0,0,0,.38);text-align:right;margin-top:2px">{{ m.time }}{{ m.tick }}</div></div>
+</sc-for>
+<sc-if value="{{ s5typing }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;gap:4px;align-items:center;padding:9px 12px;background:white;border-radius:3px 12px 12px 12px;align-self:flex-start;box-shadow:0 1px 2px rgba(0,0,0,.1)">
+<span style="width:6px;height:6px;border-radius:50%;background:#bbb;animation:wad .9s ease-in-out infinite"></span>
+<span style="width:6px;height:6px;border-radius:50%;background:#bbb;animation:wad .9s ease-in-out .2s infinite"></span>
+<span style="width:6px;height:6px;border-radius:50%;background:#bbb;animation:wad .9s ease-in-out .4s infinite"></span>
+</div>
+</sc-if>
+</div>
+<sc-if value="{{ s5notStarted }}" hint-placeholder-val="{{ false }}">
+<div style="background:#e5ddd5;display:flex;justify-content:center;padding:10px">
+<button onClick="{{ s5StartClick }}" style="background:linear-gradient(135deg,#25D366,#128C7E);color:white;border:none;border-radius:100px;padding:10px 26px;font-size:13px;font-weight:600;cursor:pointer;font-family:Delight,sans-serif;box-shadow:0 3px 10px rgba(37,211,102,.4)">▶ Simular conversación</button>
+</div>
+</sc-if>
+</div>
+<sc-if value="{{ s5cal }}" hint-placeholder-val="{{ false }}">
+<div class="a1" style="margin-top:10px;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,60,66,.1);border:1px solid rgba(0,101,111,.2)">
+<div style="background:linear-gradient(135deg,#00434b,#00858f);padding:9px 14px;display:flex;justify-content:space-between;align-items:center">
+<div style="color:white;font-size:12px;font-weight:600">📅 Google Calendar</div>
+<div style="color:rgba(255,255,255,.65);font-size:10px">Marzo 2026</div>
+</div>
+<div style="background:white;padding:12px 14px">
+<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:6px">
+<sc-for list="{{ caldays }}" as="d" hint-placeholder-count="7">
+<div style="{{ d.style }}">{{ d.t }}</div>
+</sc-for>
+</div>
+<div style="background:rgba(0,101,111,.06);border-left:3px solid #00656f;border-radius:0 8px 8px 0;padding:8px 10px;margin-top:8px">
+<div style="font-size:11px;font-weight:600;color:#272727">Consulta General</div>
+<div style="font-size:10px;color:#54615f;margin-top:2px">🕐 Mié 19 de Marzo · 11:00 AM</div>
+<div style="font-size:10px;color:#54615f;margin-top:1px">👤 Ana Martínez</div>
+<div style="display:flex;gap:5px;margin-top:6px;flex-wrap:wrap">
+<span style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:2px 7px;font-size:9px;color:#16a34a;font-weight:600">✓ Confirmada</span>
+<span style="background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:20px;padding:2px 7px;font-size:9px;color:#128C7E;font-weight:600">💬 WhatsApp</span>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ s5done }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ s5Reset }}" style="width:100%;margin-top:7px;padding:7px;background:transparent;border:1px solid rgba(0,101,111,.3);border-radius:8px;font-size:11px;color:#00656f;font-weight:600;cursor:pointer;font-family:Delight,sans-serif" style-hover="background:rgba(0,101,111,.06)">↺ Simular de nuevo</button>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is6 }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="07 Desarrollo" class="slide">
+<div style="display:flex;flex-direction:column;gap:22px;width:100%;max-width:1130px">
+<div style="display:flex;flex-direction:column;gap:7px">
+<div class="a1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(0,101,111,.07);border:1px solid rgba(0,101,111,.25);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00656f">🔧 Ecosistema Digital</div>
+<h2 class="a2" style="margin:0;font-weight:700;font-size:clamp(22px,2.8vw,40px);line-height:0.72;color:#272727;letter-spacing:-.5px">Más que Agentes —<br></br><em style="color:#00656f;font-style:normal">Desarrollo a Medida</em></h2>
+<p class="a3" style="margin:0;font-size:12.5px;line-height:1.7;color:#54615f;max-width:700px">Infraestructura digital completa con IA para escalar tu negocio.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+<div class="a3" style="background:rgba(255,255,255,.78);border:1px solid rgba(0,101,111,.15);border-radius:16px;padding:24px;position:relative;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,60,66,.1)"><div style="font-size:52px;font-weight:800;position:absolute;top:10px;right:12px;color:rgba(0,101,111,.08);line-height:1">01</div><div style="font-size:26px;margin-bottom:11px">🌐</div><div style="font-size:16px;font-weight:600;color:#272727;margin-bottom:6px">Websites Inteligentes</div><div style="font-size:12px;color:#54615f;line-height:1.6">Sitios modernos con IA, CTAs optimizados, widget de WhatsApp y conexión directa a CRM.</div><div style="margin-top:14px;font-size:12px;font-weight:700;color:#00656f">A medida</div></div>
+<div class="a4" style="background:rgba(255,255,255,.78);border:1px solid rgba(0,101,111,.15);border-radius:16px;padding:24px;position:relative;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,60,66,.1)"><div style="font-size:52px;font-weight:800;position:absolute;top:10px;right:12px;color:rgba(0,101,111,.08);line-height:1">02</div><div style="font-size:26px;margin-bottom:11px">⚙️</div><div style="font-size:16px;font-weight:600;color:#272727;margin-bottom:6px">Micro-SaaS</div><div style="font-size:12px;color:#54615f;line-height:1.6">CRM personalizado, paneles de control inteligentes y automatizaciones internas a medida.</div><div style="margin-top:14px;font-size:12px;font-weight:700;color:#00656f">A medida</div></div>
+<div class="a5" style="background:rgba(255,255,255,.78);border:1px solid rgba(0,101,111,.15);border-radius:16px;padding:24px;position:relative;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,60,66,.1)"><div style="font-size:52px;font-weight:800;position:absolute;top:10px;right:12px;color:rgba(0,101,111,.08);line-height:1">03</div><div style="font-size:26px;margin-bottom:11px">📱</div><div style="font-size:16px;font-weight:600;color:#272727;margin-bottom:6px">Aplicaciones Móviles</div><div style="font-size:12px;color:#54615f;line-height:1.6">Apps nativas con IA integrada, conectadas a tus agentes y sistemas internos.</div><div style="margin-top:14px;font-size:12px;font-weight:700;color:#00656f">A medida</div></div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is7 }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="08 Contacto" class="slide" style="justify-content:space-between;padding-left:10%;padding-right:10%">
+<img src="brand/textura-deepteal.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;pointer-events:none"></img>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:28px;max-width:50%;position:relative;z-index:1">
+<div>
+<div class="a1" style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(0,101,111,.07);border:1px solid rgba(0,101,111,.25);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#00656f;margin-bottom:13px">🚀 Hablemos de tu Proyecto</div>
+<h1 class="a2" style="margin:0;font-weight:700;font-size:clamp(32px,4.5vw,58px);line-height:1.08;color:#272727;letter-spacing:-1px">¿Listo para que la IA <em style="color:#00656f;font-style:normal">trabaje por ti?</em></h1>
+</div>
+<p class="a3" style="margin:0;max-width:500px;font-size:15px;line-height:1.7;color:#54615f">En menos de 48 horas tendrás una propuesta personalizada para tu negocio.</p>
+<div class="a4" style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px;width:100%">
+<div onClick="{{ openWa }}" style="background:rgba(255,255,255,.8);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:18px;text-align:center;cursor:pointer;box-shadow:0 2px 10px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);background:rgba(255,255,255,.95);transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,60,66,.1)">
+<div style="font-size:26px;margin-bottom:7px">💬</div>
+<div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#54615f;margin-bottom:3px">WhatsApp</div>
+<div style="font-size:12.5px;font-weight:600;color:#272727">+52 33 2560 0502</div>
+<div style="font-size:10px;color:#00656f;margin-top:3px;font-weight:500">Escríbenos →</div>
+</div>
+<div onClick="{{ openWeb }}" style="background:rgba(255,255,255,.8);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:18px;text-align:center;cursor:pointer;box-shadow:0 2px 10px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);background:rgba(255,255,255,.95);transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,60,66,.1)">
+<div style="font-size:26px;margin-bottom:7px">🌐</div>
+<div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#54615f;margin-bottom:3px">Website</div>
+<div style="font-size:12.5px;font-weight:600;color:#272727">smartiza.ai</div>
+<div style="font-size:10px;color:#00656f;margin-top:3px;font-weight:500">Visitar →</div>
+</div>
+<div onClick="{{ openMail }}" style="background:rgba(255,255,255,.8);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:18px;text-align:center;cursor:pointer;box-shadow:0 2px 10px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);background:rgba(255,255,255,.95);transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,60,66,.1)">
+<div style="font-size:26px;margin-bottom:7px">📧</div>
+<div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#54615f;margin-bottom:3px">Email</div>
+<div style="font-size:12.5px;font-weight:600;color:#272727">smartiza.ia@gmail.com</div>
+<div style="font-size:10px;color:#00656f;margin-top:3px;font-weight:500">Enviar correo →</div>
+</div>
+<div onClick="{{ openIg }}" style="background:rgba(255,255,255,.8);border:1px solid rgba(0,101,111,.15);border-radius:13px;padding:18px;text-align:center;cursor:pointer;box-shadow:0 2px 10px rgba(0,60,66,.05)" style-hover="border-color:rgba(0,101,111,.4);background:rgba(255,255,255,.95);transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,60,66,.1)">
+<div style="font-size:26px;margin-bottom:7px">📷</div>
+<div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#54615f;margin-bottom:3px">Instagram</div>
+<div style="font-size:12.5px;font-weight:600;color:#272727">@smartiza.ia</div>
+<div style="font-size:10px;color:#00656f;margin-top:3px;font-weight:500">Seguir →</div>
+</div>
+</div>
+<div class="a5" style="font-size:10.5px;color:#54615f;display:flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(0,101,111,.05);border:1px dashed rgba(0,101,111,.25);border-radius:8px">👆 Toca cualquier tarjeta para contactarnos directamente</div>
+</div>
+<div class="a5" style="width:42%;display:flex;justify-content:center;align-items:center;position:relative;z-index:1;animation:float 6s ease-in-out infinite">
+<img src="brand/contact-image.png" alt="Smartiza AI Assistant" style="max-width:100%;height:auto;border-radius:24px;box-shadow:0 20px 40px rgba(0,60,66,.15);border:1px solid rgba(255,255,255,.5)"></img>
+</div>
+</div>
+</sc-if>
+
+<div style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;z-index:600">
+<button onClick="{{ prev }}" style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);border:1px solid rgba(0,101,111,.2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:#00656f;backdrop-filter:blur(12px);box-shadow:0 2px 10px rgba(0,60,66,.1)" style-hover="background:#00656f;color:white">←</button>
+<div style="display:flex;gap:9px;background:rgba(255,255,255,.9);padding:12px 16px;border-radius:100px;border:1px solid rgba(0,101,111,.15);backdrop-filter:blur(10px);box-shadow:0 4px 15px rgba(0,60,66,.08)">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="8">
+<button onClick="{{ d.click }}" title="{{ d.label }}" style="{{ d.style }}"></button>
+</sc-for>
+</div>
+<button onClick="{{ next }}" style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);border:1px solid rgba(0,101,111,.2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:#00656f;backdrop-filter:blur(12px);box-shadow:0 2px 10px rgba(0,60,66,.1)" style-hover="background:#00656f;color:white">→</button>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cur: 0, c0: 0, c1: 0, c2: 0, bars: false, chatMsgs: [{ who: 'bot', text: '👋 ¡Hola! Soy el agente de Smartiza IA. ¿En qué puedo ayudarte hoy?' }], chatTyping: false, chatInput: '', s5msgs: [], s5typing: false, s5cal: false, s5done: false };
+  chatHistory = []; s5timers = []; s5playing = false;
+  labels = ['Hero', 'Canales', 'Planes', 'Demo Chat', 'Demo Leads', 'Demo Agenda', 'Desarrollo', 'Contacto'];
+  N = 8;
+  S5C = [
+    { w: 'bot', t: '¡Hola! Soy el asistente de la Clínica Ejemplo. ¿Cómo te llamas?' },
+    { w: 'usr', t: 'Hola, me llamo Ana Martínez' },
+    { w: 'bot', t: '¡Mucho gusto Ana! ¿Qué tipo de consulta necesitas? Tenemos Consulta General, Psicología o Nutrición.' },
+    { w: 'usr', t: 'Quisiera una Consulta General' },
+    { w: 'bot', t: '¡Perfecto! Tengo disponibilidad: Lunes 17, Miércoles 19 o Viernes 21 de Marzo. ¿Cuál te viene mejor?' },
+    { w: 'usr', t: 'El Miércoles 19 está bien' },
+    { w: 'bot', t: 'Para el Miércoles 19 tengo: 9:00 AM, 11:00 AM o 4:00 PM. ¿Cuál prefieres?' },
+    { w: 'usr', t: 'A las 11:00 AM por favor' },
+    { w: 'bot', t: '¡Listo Ana! Cita confirmada: Consulta General el Miércoles 19 a las 11:00 AM. Agendada en Google Calendar. ¡Recibirás recordatorio por WhatsApp 24h antes!' }
+  ];
+  componentDidMount() {
+    this.animCnt();
+    this.keyH = (e) => {
+      const tag = (document.activeElement || {}).tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') this.go(this.state.cur + 1);
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') this.go(this.state.cur - 1);
+    };
+    document.addEventListener('keydown', this.keyH);
+  }
+  componentWillUnmount() { document.removeEventListener('keydown', this.keyH); this.clearS5(); }
+  clearS5() { this.s5timers.forEach(clearTimeout); this.s5timers = []; this.s5playing = false; }
+  animCnt() {
+    const targets = [{ k: 'c0', to: 24 }, { k: 'c1', to: 100 }, { k: 'c2', to: 4 }];
+    targets.forEach(t => {
+      let v = 0; const inc = t.to / 80;
+      const tmr = setInterval(() => { v = Math.min(v + inc, t.to); this.setState({ [t.k]: Math.floor(v) }); if (v >= t.to) clearInterval(tmr); }, 16);
+    });
+  }
+  go(n) {
+    if (n === this.state.cur || n < 0 || n >= this.N) return;
+    this.clearS5();
+    this.setState({ cur: n, bars: false, s5msgs: [], s5typing: false, s5cal: false, s5done: false });
+    if (n === 0) setTimeout(() => this.animCnt(), 300);
+    if (n === 4) setTimeout(() => this.setState({ bars: true }), 500);
+    if (n === 5) setTimeout(() => this.s5Start(), 500);
+  }
+  s5Start() {
+    if (this.s5playing) return;
+    this.s5playing = true;
+    this.setState({ s5msgs: [], s5typing: false, s5cal: false, s5done: false });
+    let cursor = 400;
+    this.S5C.forEach(m => {
+      if (m.w === 'bot') {
+        this.s5timers.push(setTimeout(() => this.setState({ s5typing: true }), cursor));
+        const dur = 700 + m.t.length * 11;
+        this.s5timers.push(setTimeout(() => this.setState(s => ({ s5typing: false, s5msgs: s.s5msgs.concat([{ who: 'bot', text: m.t }]) })), cursor + dur));
+        cursor += dur + 450;
+      } else {
+        this.s5timers.push(setTimeout(() => this.setState(s => ({ s5msgs: s.s5msgs.concat([{ who: 'usr', text: m.t }]) })), cursor));
+        cursor += 750;
+      }
+    });
+    this.s5timers.push(setTimeout(() => { this.setState({ s5cal: true, s5done: true }); this.s5playing = false; }, cursor + 500));
+  }
+  componentDidUpdate() {
+    const b = document.getElementById('s5body'); if (b) b.scrollTop = b.scrollHeight;
+    const c = document.getElementById('chat-body'); if (c) c.scrollTop = c.scrollHeight;
+  }
+  sendChat(txt) {
+    const t = (txt || this.state.chatInput || '').trim(); if (!t) return;
+    this.setState(s => ({ chatInput: '', chatMsgs: s.chatMsgs.concat([{ who: 'usr', text: t }]), chatTyping: true }));
+    this.chatHistory.push({ role: 'user', content: t });
+    fetch('https://smartiza.jroupb.easypanel.host/webhook/41b91edb-857a-49a8-93d1-e4e5d3245622', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId: 'smartiza-demo', chatInput: t, history: this.chatHistory })
+    }).then(r => r.text()).then(text => {
+      let reply = text;
+      try { const d = JSON.parse(text); reply = d.output || d.response || d.text || d.message || text; if (typeof reply === 'object') reply = JSON.stringify(reply); } catch (e) {}
+      this.chatHistory.push({ role: 'assistant', content: reply });
+      if (this.chatHistory.length > 10) this.chatHistory = this.chatHistory.slice(-10);
+      this.setState(s => ({ chatTyping: false, chatMsgs: s.chatMsgs.concat([{ who: 'bot', text: reply }]) }));
+    }).catch(() => {
+      this.setState(s => ({ chatTyping: false, chatMsgs: s.chatMsgs.concat([{ who: 'bot', text: 'Error de conexión — Contáctanos: +52 33 2560 0502' }]) }));
+    });
+  }
+  renderVals() {
+    const s = this.state, teal = '#00656f';
+    const dots = this.labels.map((label, i) => ({
+      label,
+      click: () => this.go(i),
+      style: { width: 7, height: 7, borderRadius: '50%', border: 'none', outline: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s', background: i === s.cur ? teal : 'rgba(0,101,111,.22)', transform: i === s.cur ? 'scale(1.8)' : 'none', boxShadow: i === s.cur ? '0 0 8px rgba(0,101,111,.5)' : 'none' }
+    }));
+    const now = (() => { const d = new Date(); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); })();
+    const s5msgs = s.s5msgs.map(m => ({ text: m.text, time: now, tick: m.who === 'usr' ? ' ✓✓' : '', style: m.who === 'usr'
+      ? { alignSelf: 'flex-end', background: '#dcf8c6', borderRadius: '12px 3px 12px 12px', padding: '8px 12px', fontSize: 11.5, maxWidth: '82%', boxShadow: '0 1px 2px rgba(0,0,0,.1)', lineHeight: 1.5, color: '#111', fontFamily: 'Delight,sans-serif' }
+      : { alignSelf: 'flex-start', background: 'white', borderRadius: '3px 12px 12px 12px', padding: '8px 12px', fontSize: 11.5, maxWidth: '82%', boxShadow: '0 1px 2px rgba(0,0,0,.1)', lineHeight: 1.5, color: '#111', fontFamily: 'Delight,sans-serif' } }));
+    const chatMsgs = s.chatMsgs.map(m => ({ text: m.text, style: m.who === 'usr'
+      ? { maxWidth: '84%', padding: '9px 13px', fontSize: 11.5, lineHeight: 1.5, background: 'linear-gradient(135deg,#00858f,#00434b)', color: 'white', alignSelf: 'flex-end', borderRadius: '14px 4px 14px 14px', whiteSpace: 'pre-line' }
+      : { maxWidth: '84%', padding: '9px 13px', fontSize: 11.5, lineHeight: 1.5, background: 'rgba(0,101,111,.08)', border: '1px solid rgba(0,101,111,.18)', color: '#272727', alignSelf: 'flex-start', borderRadius: '4px 14px 14px 14px', whiteSpace: 'pre-line' } }));
+    const dn = ['L', 'M', 'X', 'J', 'V', 'S', 'D'].map(t => ({ t, style: { textAlign: 'center', fontSize: 9, color: '#8a9694', fontWeight: 600, padding: 2 } }));
+    const days = [];
+    for (let e = 0; e < 6; e++) days.push({ t: '', style: {} });
+    for (let d = 1; d <= 31; d++) {
+      if (d === 19) days.push({ t: d, style: { textAlign: 'center', fontSize: 9.5, padding: '3px 1px', borderRadius: 5, background: 'linear-gradient(135deg,#00858f,#00434b)', color: 'white', fontWeight: 700, boxShadow: '0 2px 5px rgba(0,101,111,.5)' } });
+      else if (d === 3) days.push({ t: d, style: { textAlign: 'center', fontSize: 9.5, padding: '3px 1px', borderRadius: 4, background: 'rgba(0,101,111,.13)', color: teal, fontWeight: 700 } });
+      else days.push({ t: d, style: { textAlign: 'center', fontSize: 9.5, padding: '3px 1px', color: '#555' } });
+    }
+    const barW = (w) => ({ height: '100%', borderRadius: 100, background: 'linear-gradient(135deg,#8ecad0,#00656f)', transition: 'width 1.4s ease', width: s.bars ? w : '0%' });
+    return {
+      cnt0: s.c0 + '/7', cnt1: s.c1 + '%', cnt2: s.c2 + '+',
+      pbw: ((s.cur + 1) / this.N * 100) + '%',
+      is0: s.cur === 0, is1: s.cur === 1, is2: s.cur === 2, is3: s.cur === 3, is4: s.cur === 4, is5: s.cur === 5, is6: s.cur === 6, is7: s.cur === 7,
+      dots, s5msgs, chatMsgs, caldays: dn.concat(days),
+      s5typing: s.s5typing, s5cal: s.s5cal, s5done: s.s5done, s5notStarted: !s.s5done && s.s5msgs.length === 0 && !s.s5typing && !this.s5playing,
+      chatTyping: s.chatTyping, chatInput: s.chatInput,
+      onChatInput: (e) => this.setState({ chatInput: e.target.value }),
+      onChatKey: (e) => { if (e.key === 'Enter') this.sendChat(); },
+      sendMsg: () => this.sendChat(),
+      qPrecios: () => this.sendChat('¿Cuáles son sus precios?'),
+      qCita: () => this.sendChat('Quiero agendar una cita'),
+      qFunciona: () => this.sendChat('¿Cómo funciona?'),
+      s5Reset: () => { this.clearS5(); this.setState({ s5msgs: [], s5typing: false, s5cal: false, s5done: false }); setTimeout(() => this.s5Start(), 200); },
+      s5StartClick: () => this.s5Start(),
+      next: () => this.go(s.cur + 1), prev: () => this.go(s.cur - 1),
+      goPlanes: () => this.go(2), goComo: () => this.go(1),
+      w1: barW('92%'), w2: barW('85%'), w3: barW('78%'), w4: barW('61%'), w5: barW('70%'), w6: barW('45%'), w7: barW('28%'), w8: barW('35%'), w9: barW('20%'),
+      openWa: () => window.open('https://wa.me/523325600502', '_blank'),
+      openWeb: () => window.open('https://smartiza.ai', '_blank'),
+      openMail: () => window.open('mailto:smartiza.ia@gmail.com', '_blank'),
+      openIg: () => window.open('https://www.instagram.com/smartiza.ia/', '_blank')
+    };
+  }
+}
+</script>
+</body>
+</html>
